@@ -5,7 +5,36 @@ let pickedColor = pickColor();
 let colorDisplay = document.getElementById("colorDisplay");
 let messageDisplay = document.querySelector("#message")
 let header =  document.querySelector("h1")
-var reset = document.querySelector("#reset");
+let reset = document.querySelector("#reset");
+let easyBtn = document.querySelector("#easyBtn");
+let hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function(){
+    easyBtn.classList.add("selected");
+    hardBtn.classList.remove("selected");
+    colors = generateRandomColors(3);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(let i = 0; i<squares.length; i++){
+        if (colors[i]){
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+    }
+})
+
+hardBtn.addEventListener("click", function(){
+    hardBtn.classList.add("selected");
+    easyBtn.classList.remove("selected");
+    colors = generateRandomColors(6);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(let i = 0; i<squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = "block";
+    }
+})
 
 reset.addEventListener("click", function(){
     colors = generateRandomColors(6);
