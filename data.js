@@ -23,4 +23,8 @@ let htmlColors =
 "violet":"#ee82ee",
 "wheat":"#f5deb3","white":"#ffffff","whitesmoke":"#f5f5f5",
 "yellow":"#ffff00","yellowgreen":"#9acd32"};
+
+let hexData = [
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "e", "f"
+]
     
