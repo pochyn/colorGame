@@ -17,3 +17,9 @@ body{
 h1{
     color: cornflowerblue;
 }
+
+#stripe{
+    background-color: white;
+    height: 30px;
+    text-align: center;
+}
