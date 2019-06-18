@@ -1,0 +1,20 @@
+body{
+    background-color: blanchedalmond;
+}
+
+.square{
+    width: 30%;
+    background-color: blueviolet;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.666%;
+}
+
+#container{
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1{
+    color: cornflowerblue;
+}
