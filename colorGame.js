@@ -21,7 +21,7 @@ resetButton.addEventListener("click", function(){
 function init(){
     for (let i = 0; i<modeButtons.length; i++){
         modeButtons[i].addEventListener("click", function(){
-    
+            removeColor("white");
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
             this.classList.add("selected");
@@ -33,7 +33,7 @@ function init(){
 
     for (let i = 0; i<typeButtons.length; i++){
         typeButtons[i].addEventListener("click", function(){
-    
+            removeColor("white");
             typeButtons[0].classList.remove("selected");
             typeButtons[1].classList.remove("selected");
             typeButtons[2].classList.remove("selected");
@@ -57,11 +57,14 @@ function init(){
             let clicked;
             typeSelected === "hex" ? clicked = rgbToHex(this.style.backgroundColor) : clicked = this.style.backgroundColor;
             if (clicked === pickedColor){
+                messageDisplay.style.display = "inline";
                 messageDisplay.textContent = "Correct!";
                 changeToWinning(clicked);
                 header.style.backgroundColor = pickedColor;
                 resetButton.textContent = "Play Again?";
+                addColor(pickedColor);
             } else {
+                messageDisplay.style.display = "inline";
                 this.style.backgroundColor = "#162B54";
                 messageDisplay.textContent = "Try Again";
             }
@@ -76,6 +79,7 @@ function reset(){
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
     messageDisplay.textContent = "";
+    messageDisplay.style.display = "none";
     for(let i = 0; i < squares.length; i++) {
         if (colors[i]){
             squares[i].style.display = "block";
@@ -86,6 +90,7 @@ function reset(){
     }
     resetButton.textContent = "New Colors";
     header.style.backgroundColor = "#37C2E9";
+    removeColor("#37C2E9");
 }
 
 function changeToWinning(color){
@@ -140,5 +145,19 @@ function rgbToHex(col)
         r=r.length==1?'0'+r:r; g=g.length==1?'0'+g:g; b=b.length==1?'0'+b:b;
         var colHex='#'+r+g+b;
         return colHex;
+    }
+}
+
+function addColor(col){
+    let selected = document.querySelectorAll(".selected");
+    for(let i = 0; i < selected.length; i++) {
+        selected[i].style.backgroundColor = col;
+    }
+}
+
+function removeColor(col){
+    let selected = document.querySelectorAll(".selected");
+    for(let i = 0; i < selected.length; i++) {
+        selected[i].style.backgroundColor = col;
     }
 }
