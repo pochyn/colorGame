@@ -16,7 +16,7 @@ body{
 }
 
 #container{
-    width: 60%;
+    width: 40%;
     margin: 20px auto;
 }
 
@@ -78,5 +78,5 @@ button:hover{
 
 #divider{
     display: inline-block;
-    width: 13%;
+    width: 8%;
 }
