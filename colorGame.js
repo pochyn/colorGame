@@ -62,7 +62,7 @@ function init(){
                 header.style.backgroundColor = pickedColor;
                 resetButton.textContent = "Play Again?";
             } else {
-                this.style.backgroundColor = "blanchedalmond";
+                this.style.backgroundColor = "#162B54";
                 messageDisplay.textContent = "Try Again";
             }
         })
@@ -85,7 +85,7 @@ function reset(){
         }
     }
     resetButton.textContent = "New Colors";
-    header.style.backgroundColor = "blanchedalmond";
+    header.style.backgroundColor = "#37C2E9";
 }
 
 function changeToWinning(color){
