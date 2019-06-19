@@ -16,11 +16,11 @@ body{
 }
 
 #container{
-    width: 70%;
-    margin: 30px auto;
+    width: 60%;
+    margin: 20px auto;
 }
 
-h1{
+h3{
     color: #C2E0E8;
     text-align: center;
     background-color: #37C2E9;
@@ -78,5 +78,5 @@ button:hover{
 
 #divider{
     display: inline-block;
-    width: 18%;
+    width: 13%;
 }
